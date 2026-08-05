@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bmpi18iv0l8j5" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dkh0hglsffoiv" path="res://mob.tscn" id="2_h2yge"]
 
-[sub_resource type="Curve2D" id="Curve2D_h2yge"]
+[sub_resource type="Curve2D" id="Curve2D_1bvp3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -240, -442, 0, 0, 0, 0, 232, -442, 0, 0, 0, 0, 232, 262, 0, 0, 0, 0, -232, 246, 0, 0, 0, 0, -240, -442, 0, 0, 0, 0, 224, -370)
+"points": PackedVector2Array(0, 0, 0, 0, -112, -120, 0, 0, 0, 0, 352, -120, 0, 0, 0, 0, 352, 584, 0, 0, 0, 0, -96, 576, 0, 0, 0, 0, -112, -120)
 }
-point_count = 6
+point_count = 5
 
 [node name="Main" type="Node" unique_id=2023452797]
 script = ExtResource("1_0xm2m")
@@ -30,11 +30,11 @@ one_shot = true
 position = Vector2(240, 450)
 
 [node name="MobPath" type="Path2D" parent="." unique_id=934509819]
-position = Vector2(240, 450)
-curve = SubResource("Curve2D_h2yge")
+position = Vector2(120, 128)
+curve = SubResource("Curve2D_1bvp3")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" unique_id=1629247282]
-position = Vector2(-240, -442)
+position = Vector2(-112, -120)
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
