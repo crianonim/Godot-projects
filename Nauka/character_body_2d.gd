@@ -23,3 +23,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_lava_body_entered(body: Node2D) -> void:
+	if (body == self):
+		print("I fell into lava!")
+	else:
+		print("Something else fell into lava")
+		print(body)
+	body.queue_free()
+	
