@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://4hchcth0cthk"]
+
+[ext_resource type="PackedScene" uid="uid://d30ebo7uakvax" path="res://character_body_2d.tscn" id="1_wwewa"]
+[ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="2_e1aua"]
+
+[node name="Swiat" type="Node2D" unique_id=265844890]
+
+[node name="Player" parent="." unique_id=807201436 instance=ExtResource("1_wwewa")]
+position = Vector2(180, 325)
+
+[node name="Pierwsza" parent="." unique_id=2043435884 instance=ExtResource("2_e1aua")]
+position = Vector2(235, 488)
+
+[node name="Druga" parent="." unique_id=92357753 instance=ExtResource("2_e1aua")]
+position = Vector2(597, 437)
+scale = Vector2(2.5200047, 1)

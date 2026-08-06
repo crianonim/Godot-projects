@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d30ebo7uakvax"]
+
+[ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="1_f50pn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5phnh"]
+radius = 47.0
+height = 164.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=807201436]
+position = Vector2(186, 154)
+script = ExtResource("1_f50pn")
+
+[node name="CharacterBody2D" type="CollisionShape2D" parent="." unique_id=1530681766]
+position = Vector2(62, 64)
+shape = SubResource("CapsuleShape2D_5phnh")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1457319807]
+offset_left = 42.000004
+offset_top = 39.000008
+offset_right = 76.552704
+offset_bottom = 70.284096
+scale = Vector2(1.0997691, 3.212516)
+color = Color(0.7543579, 0.3825661, 0.4747141, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1209231500]
+offset_left = 33.000004
+offset_top = -11.0
+offset_right = 86.64763
+offset_bottom = 7.9882317
+scale = Vector2(1.0997691, 3.212516)
+color = Color(0.55211145, 0.54804343, 0, 1)
