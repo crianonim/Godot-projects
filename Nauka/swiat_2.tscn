@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ceysy3qfn35qp"]
+
+[ext_resource type="PackedScene" uid="uid://bq23an7ib6llf" path="res://lava.tscn" id="1_du2l8"]
+[ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="2_c6ikq"]
+[ext_resource type="Script" uid="uid://dg0ngjo8rkdl" path="res://lava.gd" id="2_u3y7s"]
+[ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://enemy.tscn" id="3_h7hda"]
+
+[node name="Swiat2" type="Node2D" unique_id=1825928502]
+
+[node name="Lava" parent="." unique_id=994413530 instance=ExtResource("1_du2l8")]
+position = Vector2(94.99999, 599)
+scale = Vector2(22.412872, 3.8569684)
+script = ExtResource("2_u3y7s")
+
+[node name="Platform" parent="." unique_id=2043435884 instance=ExtResource("2_c6ikq")]
+position = Vector2(299, 430)
+scale = Vector2(7.8581944, 0.65423524)
+
+[node name="enemy" parent="." unique_id=1332422706 instance=ExtResource("3_h7hda")]
+position = Vector2(957, 44)
+
+[node name="enemy2" parent="." unique_id=1483900832 instance=ExtResource("3_h7hda")]
+position = Vector2(1127, 44)
+
+[node name="PlayerStart" type="Marker2D" parent="." unique_id=1271456968 groups=["player_start"]]
+position = Vector2(95, 346)

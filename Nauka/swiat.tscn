@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ccif4adstdabx" path="res://swiat.gd" id="1_83rlh"]
 [ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://enemy.tscn" id="1_nphbu"]
-[ext_resource type="PackedScene" uid="uid://d30ebo7uakvax" path="res://character_body_2d.tscn" id="1_wwewa"]
 [ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="2_e1aua"]
 [ext_resource type="PackedScene" uid="uid://bq23an7ib6llf" path="res://lava.tscn" id="3_tp2rk"]
 [ext_resource type="Script" uid="uid://dg0ngjo8rkdl" path="res://lava.gd" id="4_iyajt"]
@@ -16,7 +15,7 @@ position = Vector2(122, 339)
 [node name="enemy2" parent="." unique_id=1927781652 instance=ExtResource("1_nphbu")]
 position = Vector2(906, 365)
 
-[node name="Player" parent="." unique_id=807201436 instance=ExtResource("1_wwewa")]
+[node name="PlayerStart" type="Marker2D" parent="." unique_id=976027327 groups=["player_start"]]
 position = Vector2(180, 325)
 
 [node name="Pierwsza" parent="." unique_id=2043435884 instance=ExtResource("2_e1aua")]
@@ -30,5 +29,3 @@ scale = Vector2(2.5200047, 1)
 position = Vector2(689, 637)
 scale = Vector2(6.9094086, -1.7476753)
 script = ExtResource("4_iyajt")
-
-[connection signal="body_entered" from="Lava" to="Player" method="_on_lava_body_entered"]

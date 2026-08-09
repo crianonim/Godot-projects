@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://cljo0h54ukqrs" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://d30ebo7uakvax" path="res://character_body_2d.tscn" id="2_0xm2m"]
+
+[node name="Main" type="Node" unique_id=2130218346]
+script = ExtResource("1_ig7tw")
+
+[node name="Scene2d" type="Node2D" parent="." unique_id=1295402930]
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=551018643]
+
+[node name="CharacterBody2D" parent="." unique_id=807201436 instance=ExtResource("2_0xm2m")]

@@ -3,11 +3,10 @@
 [ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="1_f50pn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5phnh"]
-radius = 47.0
+radius = 22.0
 height = 164.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=807201436]
-position = Vector2(186, 154)
 script = ExtResource("1_f50pn")
 
 [node name="CharacterBody2D" type="CollisionShape2D" parent="." unique_id=1530681766]

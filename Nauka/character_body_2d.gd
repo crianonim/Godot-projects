@@ -25,11 +25,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_lava_body_entered(body: Node2D) -> void:
-	if (body == self):
-		print("I fell into lava!")
-	else:
-		print("Something else fell into lava")
-		print(body)
-	body.queue_free()
+func on_fell_into_lava() -> void:
+	print("I fell into lava!")
+	queue_free()
 	
