@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://nsikemufqtfg"]
+
+[ext_resource type="Script" uid="uid://d31y6e45bhspw" path="res://topdown/main.gd" id="1_61862"]
+[ext_resource type="PackedScene" uid="uid://704c7lk3tn3g" path="res://topdown/player.tscn" id="1_shv8f"]
+
+[node name="MainTopDown" type="Node2D" unique_id=1560949187]
+script = ExtResource("1_61862")
+
+[node name="WorldScene" type="Node2D" parent="." unique_id=1781062427]
+
+[node name="Player" parent="." unique_id=1831995767 instance=ExtResource("1_shv8f")]

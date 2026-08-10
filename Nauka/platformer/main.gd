@@ -2,7 +2,7 @@ extends Node
 class_name Main
 
 var current_scene: Node = null
-@onready var player: CharacterBody2D = $CharacterBody2D
+@onready var player: CharacterBody2D = $Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -10,7 +10,7 @@ script = ExtResource("1_ig7tw")
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=551018643]
 
-[node name="CharacterBody2D" parent="." unique_id=807201436 instance=ExtResource("2_0xm2m")]
+[node name="Player" parent="." unique_id=807201436 instance=ExtResource("2_0xm2m")]
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2017072659]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2017072659]
 zoom = Vector2(2, 2)
