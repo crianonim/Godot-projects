@@ -4,8 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://704c7lk3tn3g" path="res://topdown/player.tscn" id="1_shv8f"]
 
 [node name="MainTopDown" type="Node2D" unique_id=1560949187]
+process_mode = 3
 script = ExtResource("1_61862")
 
 [node name="WorldScene" type="Node2D" parent="." unique_id=1781062427]
+process_mode = 1
 
 [node name="Player" parent="." unique_id=1831995767 instance=ExtResource("1_shv8f")]
+position = Vector2(89, 55)

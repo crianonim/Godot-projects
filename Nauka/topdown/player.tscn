@@ -23,3 +23,12 @@ texture = SubResource("AtlasTexture_r5hoh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1082165769]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_r5hoh")
+
+[node name="Label" type="Label" parent="." unique_id=2056806759]
+offset_left = -6.0
+offset_top = -21.0
+offset_right = 8.0
+offset_bottom = -9.0
+theme_override_font_sizes/font_size = 8
+text = "123"
+metadata/_edit_use_anchors_ = true
