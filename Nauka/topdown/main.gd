@@ -6,7 +6,7 @@ var current_scene: Node = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	change_scene("Village")
+	change_scene("village_2")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
