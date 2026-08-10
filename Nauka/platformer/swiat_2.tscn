@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ceysy3qfn35qp"]
 
-[ext_resource type="PackedScene" uid="uid://bq23an7ib6llf" path="res://lava.tscn" id="1_du2l8"]
-[ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="2_c6ikq"]
-[ext_resource type="Script" uid="uid://dg0ngjo8rkdl" path="res://lava.gd" id="2_u3y7s"]
-[ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://enemy.tscn" id="3_h7hda"]
+[ext_resource type="PackedScene" uid="uid://bq23an7ib6llf" path="res://platformer/lava.tscn" id="1_du2l8"]
+[ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platformer/platform.tscn" id="2_c6ikq"]
+[ext_resource type="Script" uid="uid://dg0ngjo8rkdl" path="res://platformer/lava.gd" id="2_u3y7s"]
+[ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://platformer/enemy.tscn" id="3_h7hda"]
 
 [node name="Swiat2" type="Node2D" unique_id=1825928502]
 

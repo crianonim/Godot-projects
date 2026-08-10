@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://4hchcth0cthk"]
 
-[ext_resource type="Script" uid="uid://ccif4adstdabx" path="res://swiat.gd" id="1_83rlh"]
-[ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://enemy.tscn" id="1_nphbu"]
-[ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="2_e1aua"]
-[ext_resource type="PackedScene" uid="uid://bq23an7ib6llf" path="res://lava.tscn" id="3_tp2rk"]
-[ext_resource type="Script" uid="uid://dg0ngjo8rkdl" path="res://lava.gd" id="4_iyajt"]
+[ext_resource type="Script" uid="uid://ccif4adstdabx" path="res://platformer/swiat.gd" id="1_83rlh"]
+[ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://platformer/enemy.tscn" id="1_nphbu"]
+[ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platformer/platform.tscn" id="2_e1aua"]
+[ext_resource type="PackedScene" uid="uid://bq23an7ib6llf" path="res://platformer/lava.tscn" id="3_tp2rk"]
+[ext_resource type="Script" uid="uid://dg0ngjo8rkdl" path="res://platformer/lava.gd" id="4_iyajt"]
 
 [node name="Swiat" type="Node2D" unique_id=265844890]
 script = ExtResource("1_83rlh")
