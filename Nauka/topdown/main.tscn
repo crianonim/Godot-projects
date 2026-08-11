@@ -27,37 +27,36 @@ offset_bottom = 533.0
 size_flags_vertical = 3
 color = Color(0.70980394, 0.8, 1, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu" unique_id=1172622392]
-custom_minimum_size = Vector2(200, 400)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -28.5
-offset_top = -20.0
-offset_right = 28.5
-offset_bottom = 20.0
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/Panel" unique_id=1172622392]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 40
 
-[node name="PausedLabel" type="Label" parent="UI/PauseMenu/VBoxContainer" unique_id=269442932]
+[node name="PausedLabel" type="Label" parent="UI/PauseMenu/Panel/VBoxContainer" unique_id=269442932]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Paused"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/VBoxContainer" unique_id=955981750]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/Panel/VBoxContainer" unique_id=955981750]
 layout_mode = 2
 offset_transform_enabled = true
 
-[node name="ResumeButton" type="Button" parent="UI/PauseMenu/VBoxContainer/VBoxContainer" unique_id=289673317]
+[node name="ResumeButton" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer/VBoxContainer" unique_id=289673317]
 layout_mode = 2
 text = "Resume"
 
-[node name="QuitButton" type="Button" parent="UI/PauseMenu/VBoxContainer/VBoxContainer" unique_id=229205498]
+[node name="QuitButton" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer/VBoxContainer" unique_id=229205498]
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/Panel/VBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/Panel/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
