@@ -6,6 +6,7 @@ var current_scene: Node = null
 var scene_transitioning: bool = false
 var paused : bool = false
 @onready var world_scene: Node2D = $WorldScene
+@onready var pause_menu: CanvasLayer = $UI/PauseMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -51,6 +52,14 @@ func change_scene(scene_name: String):
 	print(north_exit)
 	scene_transitioning=false
 
+func pause_toggle():
+	paused=!paused
+	get_tree().paused=paused
+	if paused:
+		pause_menu.show()
+	else:
+		pause_menu.hide()
+	
 func on_north_exit(body: Node):
 	print("Body exited north",body)
 	if body == player:
@@ -63,14 +72,13 @@ func on_north_exit(body: Node):
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
-		print("Pressed cancel")
+		#print("Pressed cancel")
 		# It's the same tree, not a subtree
-		var wst=world_scene.get_tree()
-		print("Same?", wst, get_tree(), wst == get_tree())
+		#var wst=world_scene.get_tree()
+		#print("Same?", wst, get_tree(), wst == get_tree())
 		# Same?<SceneTree#34208744906><SceneTree#34208744906>true
 
-		paused=!paused
-		get_tree().paused=paused
+		pause_toggle()
 		
 	if event is InputEventMouseButton:
 		if event.pressed:
@@ -106,3 +114,11 @@ func debug_player_tile() -> void:
 	var sel_tile_pos = clicked_cell * 16.0
 	selected_tile.position= sel_tile_pos
 	#print(sel_tile_pos)
+
+
+func _on_resume_button_pressed() -> void:
+	pause_toggle()
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
