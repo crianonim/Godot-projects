@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://coeihx2ho8st7"]
+
+[ext_resource type="PackedScene" uid="uid://dxy33vy802bam" path="res://topdown/game_menu_base.tscn" id="1_24a5l"]
+
+[node name="GameMenuCrafting" unique_id=27606451 instance=ExtResource("1_24a5l")]
+
+[node name="ColorRect" parent="." index="0" unique_id=820814868]
+color = Color(0.40402588, 0.6212987, 0.93994945, 1)
+
+[node name="Label" parent="ColorRect/VBoxContainer" parent_id_path=PackedInt32Array(1816170455) index="0" unique_id=465432218]
+text = "Crafting"

@@ -2,11 +2,19 @@ extends Node2D
 class_name MainTopDown
 
 var current_scene: Node = null
+var current_game_menu : Node = null
+var current_game_menu_name : String = ""
 @onready var player: CharacterBody2D = $Player
 var scene_transitioning: bool = false
 var paused : bool = false
 @onready var world_scene: Node2D = $WorldScene
 @onready var pause_menu: CanvasLayer = $UI/PauseMenu
+@onready var game_menu: CanvasLayer = $UI/GameMenu
+
+var GameMenuScenes:= {
+	"Inventory": preload("res://topdown/game_menu_inventory.tscn"),
+	"Crafting": preload("res://topdown/game_menu_crafting.tscn"),
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +25,19 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	debug_player_tile()
 	pass
-
+func change_game_menu(game_menu_name:String):
+	if current_game_menu:
+		if current_game_menu_name == game_menu_name:
+			game_menu.show()
+			return
+		else:
+			current_game_menu.queue_free()
+	var new_packed_scene=GameMenuScenes.get(game_menu_name)
+	var new_scene = new_packed_scene.instantiate()
+	current_game_menu=new_scene
+	current_game_menu_name=game_menu_name
+	game_menu.add_child(current_game_menu)
+	game_menu.show()
 func change_scene(scene_name: String):
 	print("Change scene", scene_name)
 	var full_path = "res://topdown/%s.tscn" % scene_name
@@ -79,6 +99,13 @@ func _input(event: InputEvent) -> void:
 		# Same?<SceneTree#34208744906><SceneTree#34208744906>true
 
 		pause_toggle()
+	if Input.is_action_just_pressed("inventory"):
+		if game_menu.visible:
+			game_menu.hide()
+		else:
+			change_game_menu("Inventory")
+	if Input.is_action_just_pressed("craft"):
+		change_game_menu("Crafting")
 		
 	if event is InputEventMouseButton:
 		if event.pressed:
