@@ -38,6 +38,7 @@ func change_game_menu(game_menu_name:String):
 	current_game_menu_name=game_menu_name
 	game_menu.add_child(current_game_menu)
 	game_menu.show()
+	
 func change_scene(scene_name: String):
 	print("Change scene", scene_name)
 	var full_path = "res://topdown/%s.tscn" % scene_name
@@ -87,7 +88,7 @@ func on_north_exit(body: Node):
 			return
 		scene_transitioning=true
 		print("Player exited")
-		change_scene("farm_1")
+		change_scene.call_deferred("farm_1")
 		
 
 func _input(event: InputEvent) -> void:
@@ -100,12 +101,15 @@ func _input(event: InputEvent) -> void:
 
 		pause_toggle()
 	if Input.is_action_just_pressed("inventory"):
-		if game_menu.visible:
+		if game_menu.visible and current_game_menu_name=="Inventory":
 			game_menu.hide()
 		else:
-			change_game_menu("Inventory")
+			change_game_menu.call_deferred("Inventory")
 	if Input.is_action_just_pressed("craft"):
-		change_game_menu("Crafting")
+		if game_menu.visible and current_game_menu_name=="Crafting":
+			game_menu.hide()
+		else:
+			change_game_menu.call_deferred("Crafting")
 		
 	if event is InputEventMouseButton:
 		if event.pressed:
