@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogTree" format=3 uid="uid://b8kfi55dncamc"]
+
+[ext_resource type="Script" uid="uid://drs41vuiuml7l" path="res://dialog/dialog_tree.gd" id="1_rm3yw"]
+[ext_resource type="Script" uid="uid://d4cbywp4j1elg" path="res://dialog/dialog.gd" id="1_sn2l4"]
+[ext_resource type="Script" uid="uid://03nrdoktgr8" path="res://dialog/dialog_option.gd" id="2_7yy4w"]
+
+[sub_resource type="Resource" id="Resource_r5hoh"]
+script = ExtResource("1_sn2l4")
+metadata/_custom_type_script = "uid://d4cbywp4j1elg"
+
+[sub_resource type="Resource" id="Resource_nahfj"]
+script = ExtResource("2_7yy4w")
+text = "Option text1"
+metadata/_custom_type_script = "uid://03nrdoktgr8"
+
+[sub_resource type="Resource" id="Resource_5phnh"]
+script = ExtResource("1_sn2l4")
+options = Array[ExtResource("2_7yy4w")]([SubResource("Resource_nahfj")])
+metadata/_custom_type_script = "uid://d4cbywp4j1elg"
+
+[resource]
+script = ExtResource("1_rm3yw")
+dialogs = Array[ExtResource("1_sn2l4")]([SubResource("Resource_r5hoh"), SubResource("Resource_5phnh")])
+metadata/_custom_type_script = "uid://drs41vuiuml7l"

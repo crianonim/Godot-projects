@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://clivnjaoena3s"]
+
+[ext_resource type="Script" uid="uid://k008g3rdhx13" path="res://dialog/dialog_ui.gd" id="1_bqhwj"]
+[ext_resource type="Resource" uid="uid://7nfmdgvrgoof" path="res://dialog/test_dialog/d1.tres" id="2_tffci"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knri8"]
+bg_color = Color(0.5699685, 0.63736576, 0.33810827, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.7395997, 0.21934006, 0.38460192, 1)
+corner_detail = 20
+
+[node name="Dialog" type="Control" unique_id=1580478348]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqhwj")
+root = ExtResource("2_tffci")
+
+[node name="Panel" type="Panel" parent="." unique_id=136710971]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_knri8")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=2046305382]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1060504650]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1208904096]
+layout_mode = 2
+
+[node name="OptionsContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1789910035]
+layout_mode = 2

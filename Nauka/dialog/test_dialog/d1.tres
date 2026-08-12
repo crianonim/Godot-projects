@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Dialog" format=3 uid="uid://7nfmdgvrgoof"]
+
+[ext_resource type="Script" uid="uid://03nrdoktgr8" path="res://dialog/dialog_option.gd" id="1_fm28b"]
+[ext_resource type="Resource" uid="uid://gohyteyrg2xi" path="res://dialog/test_dialog/d2.tres" id="2_5kwp4"]
+[ext_resource type="Script" uid="uid://d4cbywp4j1elg" path="res://dialog/dialog.gd" id="2_sik3w"]
+[ext_resource type="Resource" uid="uid://drtdke5ucdwqh" path="res://dialog/test_dialog/d3.tres" id="3_rorp4"]
+
+[sub_resource type="Resource" id="Resource_vhkxv"]
+script = ExtResource("1_fm28b")
+text = "Go to Second"
+target = ExtResource("2_5kwp4")
+metadata/_custom_type_script = "uid://03nrdoktgr8"
+
+[sub_resource type="Resource" id="Resource_oanih"]
+script = ExtResource("1_fm28b")
+text = "Go to Third"
+target = ExtResource("3_rorp4")
+metadata/_custom_type_script = "uid://03nrdoktgr8"
+
+[resource]
+script = ExtResource("2_sik3w")
+text = "First"
+options = Array[ExtResource("1_fm28b")]([SubResource("Resource_vhkxv"), SubResource("Resource_oanih")])
+metadata/_custom_type_script = "uid://d4cbywp4j1elg"

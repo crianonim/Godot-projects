@@ -4,5 +4,8 @@
 
 [node name="GameMenuInventory" unique_id=27606451 instance=ExtResource("1_840kj")]
 
+[node name="ColorRect" parent="." index="0" unique_id=820814868]
+color = Color(0.62130505, 0.6400134, 0.39886114, 1)
+
 [node name="Label" parent="ColorRect/VBoxContainer" parent_id_path=PackedInt32Array(1816170455) index="0" unique_id=465432218]
 text = "Inventory"

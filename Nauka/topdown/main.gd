@@ -10,6 +10,7 @@ var paused : bool = false
 @onready var world_scene: Node2D = $WorldScene
 @onready var pause_menu: CanvasLayer = $UI/PauseMenu
 @onready var game_menu: CanvasLayer = $UI/GameMenu
+const D_1 = preload("uid://7nfmdgvrgoof")
 
 var GameMenuScenes:= {
 	"Inventory": preload("res://topdown/game_menu_inventory.tscn"),
@@ -19,6 +20,7 @@ var GameMenuScenes:= {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	change_scene("village_2")
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

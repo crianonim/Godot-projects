@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogTree" format=3 uid="uid://dpmswtwygh8vu"]
+
+[ext_resource type="Resource" uid="uid://bnt7exxrf4was" path="res://dialog/test_dialog/dd1.tres" id="1_w3kxq"]
+[ext_resource type="Script" uid="uid://drs41vuiuml7l" path="res://dialog/dialog_tree.gd" id="2_ulobd"]
+
+[resource]
+script = ExtResource("2_ulobd")
+root = ExtResource("1_w3kxq")
+metadata/_custom_type_script = "uid://drs41vuiuml7l"
