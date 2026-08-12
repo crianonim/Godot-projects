@@ -3,6 +3,17 @@
 [ext_resource type="Script" uid="uid://d31y6e45bhspw" path="res://topdown/main.gd" id="1_61862"]
 [ext_resource type="PackedScene" uid="uid://704c7lk3tn3g" path="res://topdown/player.tscn" id="1_shv8f"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5hoh"]
+bg_color = Color(0.5009684, 0.5945787, 0.82440585, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.96407336, 0.72041166, 0.81443214, 1)
+corner_detail = 15
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
 [node name="MainTopDown" type="Node2D" unique_id=1560949187]
 process_mode = 3
 script = ExtResource("1_61862")
@@ -22,44 +33,56 @@ visible = false
 process_mode = 3
 visible = false
 
-[node name="Panel" type="ColorRect" parent="UI/PauseMenu" unique_id=481006498]
-offset_left = 540.0
-offset_top = 160.0
-offset_right = 740.0
-offset_bottom = 533.0
-size_flags_vertical = 3
-color = Color(0.70980394, 0.8, 1, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/Panel" unique_id=1172622392]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -10.0
+[node name="Panel" type="Panel" parent="UI/PauseMenu" unique_id=1420007556]
+custom_minimum_size = Vector2(200, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -150.0
+offset_right = 100.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 40
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r5hoh")
 
-[node name="PausedLabel" type="Label" parent="UI/PauseMenu/Panel/VBoxContainer" unique_id=269442932]
+[node name="MarginContainer" type="MarginContainer" parent="UI/PauseMenu/Panel" unique_id=1331636809]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/Panel/MarginContainer" unique_id=1100038473]
+layout_mode = 2
+theme_override_constants/separation = 54
+
+[node name="PausedLabel" type="Label" parent="UI/PauseMenu/Panel/MarginContainer/VBoxContainer" unique_id=269442932]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Paused"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/Panel/VBoxContainer" unique_id=955981750]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/Panel/MarginContainer/VBoxContainer" unique_id=955981750]
 layout_mode = 2
 offset_transform_enabled = true
 
-[node name="ResumeButton" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer/VBoxContainer" unique_id=289673317]
+[node name="ResumeButton" type="Button" parent="UI/PauseMenu/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=289673317]
 layout_mode = 2
 text = "Resume"
 
-[node name="QuitButton" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer/VBoxContainer" unique_id=229205498]
+[node name="QuitButton" type="Button" parent="UI/PauseMenu/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=229205498]
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="UI/PauseMenu/Panel/VBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/Panel/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/Panel/MarginContainer/VBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/Panel/MarginContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
