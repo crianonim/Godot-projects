@@ -1,9 +1,72 @@
 [gd_resource type="Resource" script_class="DialogTree" format=3 uid="uid://dpmswtwygh8vu"]
 
-[ext_resource type="Resource" uid="uid://bnt7exxrf4was" path="res://dialog/test_dialog/dd1.tres" id="1_w3kxq"]
+[ext_resource type="Script" uid="uid://03nrdoktgr8" path="res://dialog/dialog_option.gd" id="1_ulobd"]
+[ext_resource type="Script" uid="uid://d4cbywp4j1elg" path="res://dialog/dialog.gd" id="1_w3kxq"]
 [ext_resource type="Script" uid="uid://drs41vuiuml7l" path="res://dialog/dialog_tree.gd" id="2_ulobd"]
+
+[sub_resource type="Resource" id="Resource_tffci"]
+script = ExtResource("1_ulobd")
+text = "Go to Second"
+target = "drugi"
+metadata/_custom_type_script = "uid://03nrdoktgr8"
+
+[sub_resource type="Resource" id="Resource_fby3n"]
+script = ExtResource("1_ulobd")
+text = "Go to Third"
+target = "trzeci"
+metadata/_custom_type_script = "uid://03nrdoktgr8"
+
+[sub_resource type="Resource" id="Resource_bqhwj"]
+script = ExtResource("1_w3kxq")
+text = "Pierwszy dialog"
+options = Array[ExtResource("1_ulobd")]([SubResource("Resource_tffci"), SubResource("Resource_fby3n")])
+metadata/_custom_type_script = "uid://d4cbywp4j1elg"
+
+[sub_resource type="Resource" id="Resource_a1u1v"]
+script = ExtResource("1_ulobd")
+text = "Back to start"
+target = "#start"
+metadata/_custom_type_script = "uid://03nrdoktgr8"
+
+[sub_resource type="Resource" id="Resource_8xdyk"]
+script = ExtResource("1_ulobd")
+text = "Third"
+target = "trzeci"
+metadata/_custom_type_script = "uid://03nrdoktgr8"
+
+[sub_resource type="Resource" id="Resource_dql1l"]
+script = ExtResource("1_w3kxq")
+text = "Drugi dialog"
+options = Array[ExtResource("1_ulobd")]([SubResource("Resource_a1u1v"), SubResource("Resource_8xdyk")])
+metadata/_custom_type_script = "uid://d4cbywp4j1elg"
+
+[sub_resource type="Resource" id="Resource_u5n51"]
+script = ExtResource("1_ulobd")
+text = "Koniec"
+metadata/_custom_type_script = "uid://03nrdoktgr8"
+
+[sub_resource type="Resource" id="Resource_ulobd"]
+script = ExtResource("1_w3kxq")
+options = Array[ExtResource("1_ulobd")]([SubResource("Resource_u5n51")])
+metadata/_custom_type_script = "uid://d4cbywp4j1elg"
+
+[sub_resource type="Resource" id="Resource_innea"]
+script = ExtResource("1_ulobd")
+text = "kkk"
+target = "bad"
+metadata/_custom_type_script = "uid://03nrdoktgr8"
+
+[sub_resource type="Resource" id="Resource_h6gl1"]
+script = ExtResource("1_w3kxq")
+options = Array[ExtResource("1_ulobd")]([SubResource("Resource_innea")])
+metadata/_custom_type_script = "uid://d4cbywp4j1elg"
 
 [resource]
 script = ExtResource("2_ulobd")
-root = ExtResource("1_w3kxq")
+dialogs = Dictionary[String, ExtResource("1_w3kxq")]({
+"#start": SubResource("Resource_bqhwj"),
+"drugi": SubResource("Resource_dql1l"),
+"t1": SubResource("Resource_h6gl1"),
+"trzeci": SubResource("Resource_ulobd")
+})
 metadata/_custom_type_script = "uid://drs41vuiuml7l"

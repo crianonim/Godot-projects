@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://clivnjaoena3s"]
 
 [ext_resource type="Script" uid="uid://k008g3rdhx13" path="res://dialog/dialog_ui.gd" id="1_bqhwj"]
-[ext_resource type="Resource" uid="uid://7nfmdgvrgoof" path="res://dialog/test_dialog/d1.tres" id="2_tffci"]
+[ext_resource type="Resource" uid="uid://dpmswtwygh8vu" path="res://dialog/test_dialog/tree.tres" id="2_tffci"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knri8"]
 bg_color = Color(0.5699685, 0.63736576, 0.33810827, 1)
@@ -20,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bqhwj")
-root = ExtResource("2_tffci")
+dialogs = ExtResource("2_tffci")
 
 [node name="Panel" type="Panel" parent="." unique_id=136710971]
 custom_minimum_size = Vector2(0, 200)
