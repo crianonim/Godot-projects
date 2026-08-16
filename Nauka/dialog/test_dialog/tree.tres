@@ -8,6 +8,7 @@
 script = ExtResource("1_ulobd")
 text = "Go to Second"
 target = "drugi"
+show_if_text = "state.flags.met_bob"
 metadata/_custom_type_script = "uid://03nrdoktgr8"
 
 [sub_resource type="Resource" id="Resource_fby3n"]
@@ -16,22 +17,30 @@ text = "Go to Third"
 target = "trzeci"
 metadata/_custom_type_script = "uid://03nrdoktgr8"
 
+[sub_resource type="Resource" id="Resource_innea"]
+script = ExtResource("1_ulobd")
+text = "Hidden"
+show_if_text = "false"
+metadata/_custom_type_script = "uid://03nrdoktgr8"
+
 [sub_resource type="Resource" id="Resource_bqhwj"]
 script = ExtResource("1_w3kxq")
 text = "Pierwszy dialog"
-options = Array[ExtResource("1_ulobd")]([SubResource("Resource_tffci"), SubResource("Resource_fby3n")])
+options = Array[ExtResource("1_ulobd")]([SubResource("Resource_tffci"), SubResource("Resource_fby3n"), SubResource("Resource_innea")])
 metadata/_custom_type_script = "uid://d4cbywp4j1elg"
 
 [sub_resource type="Resource" id="Resource_a1u1v"]
 script = ExtResource("1_ulobd")
 text = "Back to start"
 target = "#start"
+show_if_text = null
 metadata/_custom_type_script = "uid://03nrdoktgr8"
 
 [sub_resource type="Resource" id="Resource_8xdyk"]
 script = ExtResource("1_ulobd")
 text = "Third"
 target = "trzeci"
+show_if_text = null
 metadata/_custom_type_script = "uid://03nrdoktgr8"
 
 [sub_resource type="Resource" id="Resource_dql1l"]
@@ -50,23 +59,11 @@ script = ExtResource("1_w3kxq")
 options = Array[ExtResource("1_ulobd")]([SubResource("Resource_u5n51")])
 metadata/_custom_type_script = "uid://d4cbywp4j1elg"
 
-[sub_resource type="Resource" id="Resource_innea"]
-script = ExtResource("1_ulobd")
-text = "kkk"
-target = "bad"
-metadata/_custom_type_script = "uid://03nrdoktgr8"
-
-[sub_resource type="Resource" id="Resource_h6gl1"]
-script = ExtResource("1_w3kxq")
-options = Array[ExtResource("1_ulobd")]([SubResource("Resource_innea")])
-metadata/_custom_type_script = "uid://d4cbywp4j1elg"
-
 [resource]
 script = ExtResource("2_ulobd")
 dialogs = Dictionary[String, ExtResource("1_w3kxq")]({
 "#start": SubResource("Resource_bqhwj"),
 "drugi": SubResource("Resource_dql1l"),
-"t1": SubResource("Resource_h6gl1"),
 "trzeci": SubResource("Resource_ulobd")
 })
 metadata/_custom_type_script = "uid://drs41vuiuml7l"
